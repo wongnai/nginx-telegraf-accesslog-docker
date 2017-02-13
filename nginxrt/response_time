@@ -1,2 +1,2 @@
-log_format  response_time  'nginxrt,uri=$request_uri,method=$request_method,status=$status rt=$request_time,s=$body_bytes_sent';
+log_format  response_time  'nginxrt,uri="$request_uri",method=$request_method,status=$status rt=$request_time,s=$body_bytes_sent';
 
