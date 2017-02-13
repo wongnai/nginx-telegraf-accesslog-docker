@@ -1,5 +1,5 @@
 # NGINX with telegraf-ready access log
-This docker image is based on the official nginx. All requests are logged to /var/log/nginx/rt.log in influx line protocol format. Therefore it can be read by telegraf using tail input and put to influxdb in order to monitor web performance.
+This docker image is based on the official nginx. All requests are logged to /var/log/nginxrt/access.log in influx line protocol format. Therefore it can be read by telegraf using tail input and put to influxdb in order to monitor web performance.
 
 Logrotate is also setup to rotate log file daily so that it does not grow too large.
 
