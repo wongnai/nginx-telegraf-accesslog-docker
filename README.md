@@ -5,16 +5,16 @@ Logrotate is also setup to rotate log file daily so that it does not grow too la
 
 ## Extending image
 The access log configuration is placed on /etc/nginx/nginx.conf. If you already have your nginx.conf file, you may need to configure log yourselve.
-You can include /etc/nginx/response_time in your nginx.conf file to get the telgraf-ready log format. For example:-
+You can include /etc/nginxrt/response_time in your nginx.conf file to get the telgraf-ready log format. For example:-
 
-    include /etc/nginx/response_time;
-    access_log  /var/log/nginx/rt.log   response_time;
+    include /etc/nginxrt/response_time;
+    access_log  /var/log/nginxrt/access.log   response_time;
 
 ## telegraf
 To configure telegraf to read the log file and store them in influxdb, running it in separate docker container and set telegraf.conf like below:-
 
     [[inputs.tail]]
-        files = ["/var/log/nginx/rt.log"] 
+        files = ["/var/log/nginxrt/access.log"] 
         from_beginning = false
         pipe = false
         data_format = "influx"

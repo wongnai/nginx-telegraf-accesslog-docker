@@ -8,4 +8,5 @@ RUN apt-get update -y \
     && rm -rf /var/lib/apt/lists/*
 
 COPY nginx/ /etc/nginx/
+COPY nginxrt/ /etc/nginxrt/
 COPY nginx.logrotate.conf /etc/logrotate.d/
