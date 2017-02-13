@@ -7,7 +7,7 @@ Logrotate is also setup to rotate log file daily so that it does not grow too la
 The access log configuration is placed on /etc/nginx/nginx.conf. If you already have your nginx.conf file, you may need to configure log yourselve.
 You can include /etc/nginx/response_time in your nginx.conf file to get the telgraf-ready log format. For example:-
 
-    include /etc/nginx/response_time
+    include /etc/nginx/response_time;
     access_log  /var/log/nginx/rt.log   response_time;
 
 ## telegraf
